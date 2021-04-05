@@ -60,7 +60,7 @@ random.shuffle(train_data)
 
 print ('Creating train_lmdb')
 
-in_db = lmdb.open(train_lmdb, map_size=int(1e6))
+in_db = lmdb.open(train_lmdb, map_size=int(1e12))
 with in_db.begin(write=True) as in_txn:
     for in_idx, img_path in enumerate(train_data):
         if in_idx %  6 == 0:
@@ -79,7 +79,7 @@ in_db.close()
 
 print ('\nCreating validation_lmdb')
 
-in_db = lmdb.open(validation_lmdb, map_size=int(1e6))
+in_db = lmdb.open(validation_lmdb, map_size=int(1e12))
 with in_db.begin(write=True) as in_txn:
     for in_idx, img_path in enumerate(train_data):
         if in_idx % 6 != 0:
