@@ -45,8 +45,8 @@ def make_datum(img, label):
         label=label,
         data=np.rollaxis(img, 2).tostring())
 
-train_lmdb = '/home/ubuntu/cats-dogs-tutorial/input/train_lmdb'
-validation_lmdb = '/home/ubuntu/cats-dogs-tutorial/input/validation_lmdb'
+train_lmdb = '/mnt/cats-dogs-tutorial/input/train_lmdb'
+validation_lmdb = '/mnt/cats-dogs-tutorial/input/validation_lmdb'
 
 os.system('del ' + train_lmdb)
 os.system('del  ' + validation_lmdb)
