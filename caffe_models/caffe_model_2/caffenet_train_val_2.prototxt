@@ -37,7 +37,7 @@ layer {
   transform_param {
     mirror: false
     crop_size: 227
-    mean_file: "/mnt/input/mean.binaryproto"
+    mean_file: "/mnt/cats-dogs-tutorial/input/mean.binaryproto"
   }
 # mean pixel / channel-wise mean instead of mean image
 #  transform_param {
