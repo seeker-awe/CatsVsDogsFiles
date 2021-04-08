@@ -69,69 +69,69 @@ with in_db.begin(write=True) as in_txn:
         img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)
         if  "AIN" in img_path:
             label = 0
-        elif "AL" in img_path:
+        elif "AL (" in img_path:
             label = 1
-        elif "ALEFF" in img_path:
+        elif "ALEFF (" in img_path:
             label = 2
-        elif "BB" in img_path:
+        elif "BB (" in img_path:
             label = 3
-        elif "DAL" in img_path:
+        elif "DAL (" in img_path:
             label = 4
-        elif "DHA" in img_path:
+        elif "DHA (" in img_path:
             label = 5
-        elif "DHAD" in img_path:
+        elif "DHAD (" in img_path:
             label = 6
-        elif "FA" in img_path:
+        elif "FA (" in img_path:
             label = 7
-        elif "GAAF" in img_path:
+        elif "GAAF (" in img_path:
             label = 8
-        elif "GHAIN" in img_path:
+        elif "GHAIN (" in img_path:
             label = 9
-        elif "HA" in img_path:
+        elif "HA (" in img_path:
             label = 10
-        elif "HAA" in img_path:
+        elif "HAA (" in img_path:
             label = 11
-        elif "JEEM" in img_path:
+        elif "JEEM (" in img_path:
             label = 12
-        elif "KAAF" in img_path:
+        elif "KAAF (" in img_path:
             label = 13
-        elif "KHAA" in img_path:
+        elif "KHAA (" in img_path:
             label = 14
-        elif "LA" in img_path:
+        elif "LA (" in img_path:
             label = 15
-        elif "LAAM" in img_path:
+        elif "LAAM (" in img_path:
             label = 16
-        elif "MEEM" in img_path:
+        elif "MEEM (" in img_path:
             label = 17
-        elif "NUN" in img_path:
+        elif "NUN (" in img_path:
             label = 18
-        elif "RA" in img_path:
+        elif "RA (" in img_path:
             label = 19
-        elif "SAAD" in img_path:
+        elif "SAAD (" in img_path:
             label = 20
-        elif "SEEN" in img_path:
+        elif "SEEN (" in img_path:
             label = 21
-        elif "SHEEN" in img_path:
+        elif "SHEEN (" in img_path:
             label = 22
-        elif "TA" in img_path:
+        elif "TA (" in img_path:
             label = 23
-        elif "TAA" in img_path:
+        elif "TAA (" in img_path:
             label = 24
-        elif "TEST" in img_path:
+        elif "TEST (" in img_path:
             label = 25
-        elif "THAA" in img_path:
+        elif "THAA (" in img_path:
             label = 26
-        elif "THAL" in img_path:
+        elif "THAL (" in img_path:
             label = 27
-        elif "TOOT" in img_path:
+        elif "TOOT (" in img_path:
             label = 28
-        elif "WAW" in img_path:
+        elif "WAW (" in img_path:
             label = 29
-        elif "YA" in img_path:
+        elif "YA (" in img_path:
             label = 30
-        elif "YAA" in img_path:
+        elif "YAA (" in img_path:
             label = 31
-        elif "ZAY" in img_path:
+        elif "ZAY (" in img_path:
             label = 32
         print (label)
         datum = make_datum(img, label)
