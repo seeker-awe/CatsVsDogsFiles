@@ -35,7 +35,6 @@ def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):
 
     return img
 
-
 def make_datum(img, label):
     #image is numpy.ndarray format. BGR instead of RGB
     return caffe_pb2.Datum(
@@ -67,15 +66,77 @@ with in_db.begin(write=True) as in_txn:
             continue
         img = cv2.imread(img_path, cv2.IMREAD_COLOR)
         img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)
-        if 'cat' in img_path:
+        if  "ain" in img_path:
             label = 0
-        else:
+        elif "al" in img_path:
             label = 1
-        datum = make_datum(img, label)
+        elif "aleff" in img_path:
+            label = 2
+        elif "bb" in img_path:
+            label = 3
+        elif "dal" in img_path:
+            label = 4
+        elif "dha" in img_path:
+            label = 5
+        elif "dhad" in img_path:
+            label = 6
+        elif "fa" in img_path:
+            label = 7
+        elif "gaaf" in img_path:
+            label = 8
+        elif "ghain" in img_path:
+            label = 9
+        elif "ha" in img_path:
+            label = 10
+        elif "haa" in img_path:
+            label = 11
+        elif "jeem" in img_path:
+            label = 12
+        elif "kaaf" in img_path:
+            label = 13
+        elif "khaa" in img_path:
+            label = 14
+        elif "la" in img_path:
+            label = 15
+        elif "laam" in img_path:
+            label = 16
+        elif "meem" in img_path:
+            label = 17
+        elif "nun" in img_path:
+            label = 18
+        elif "ra" in img_path:
+            label = 19
+        elif "saad" in img_path:
+            label = 20
+        elif "seen" in img_path:
+            label = 21
+        elif "sheen" in img_path:
+            label = 22
+        elif "ta" in img_path:
+            label = 23
+        elif "taa" in img_path:
+            label = 24
+        elif "test" in img_path:
+            label = 25
+        elif "thaa" in img_path:
+            label = 26
+        elif "thal" in img_path:
+            label = 27
+        elif "toot" in img_path:
+            label = 28
+        elif "waw" in img_path:
+            label = 29
+        elif "ya" in img_path:
+            label = 30
+        elif "yaa" in img_path:
+            label = 31
+        elif "zay" in img_path:
+            label = 32
+
+        datum = make_3datum(img, label)
         in_txn.put('{:0>5d}'.format(in_idx).encode(), datum.SerializeToString())
         print ('{:0>5d}'.format(in_idx) + ':' + img_path)
 in_db.close()
-
 
 print ('\nCreating validation_lmdb')
 
@@ -86,10 +147,72 @@ with in_db.begin(write=True) as in_txn:
             continue
         img = cv2.imread(img_path, cv2.IMREAD_COLOR)
         img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)
-        if 'cat' in img_path:
+        if  "ain" in img_path:
             label = 0
-        else:
+        elif "al" in img_path:
             label = 1
+        elif "aleff" in img_path:
+            label = 2
+        elif "bb" in img_path:
+            label = 3
+        elif "dal" in img_path:
+            label = 4
+        elif "dha" in img_path:
+            label = 5
+        elif "dhad" in img_path:
+            label = 6
+        elif "fa" in img_path:
+            label = 7
+        elif "gaaf" in img_path:
+            label = 8
+        elif "ghain" in img_path:
+            label = 9
+        elif "ha" in img_path:
+            label = 10
+        elif "haa" in img_path:
+            label = 11
+        elif "jeem" in img_path:
+            label = 12
+        elif "kaaf" in img_path:
+            label = 13
+        elif "khaa" in img_path:
+            label = 14
+        elif "la" in img_path:
+            label = 15
+        elif "laam" in img_path:
+            label = 16
+        elif "meem" in img_path:
+            label = 17
+        elif "nun" in img_path:
+            label = 18
+        elif "ra" in img_path:
+            label = 19
+        elif "saad" in img_path:
+            label = 20
+        elif "seen" in img_path:
+            label = 21
+        elif "sheen" in img_path:
+            label = 22
+        elif "ta" in img_path:
+            label = 23
+        elif "taa" in img_path:
+            label = 24
+        elif "test" in img_path:
+            label = 25
+        elif "thaa" in img_path:
+            label = 26
+        elif "thal" in img_path:
+            label = 27
+        elif "toot" in img_path:
+            label = 28
+        elif "waw" in img_path:
+            label = 29
+        elif "ya" in img_path:
+            label = 30
+        elif "yaa" in img_path:
+            label = 31
+        elif "zay" in img_path:
+            label = 32
         datum = make_datum(img, label)
         in_txn.put('{:0>5d}'.format(in_idx).encode(), datum.SerializeToString())
         print ('{:0>5d}'.format(in_idx) + ':' + img_path)
