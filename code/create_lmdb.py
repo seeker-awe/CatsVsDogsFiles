@@ -132,7 +132,7 @@ with in_db.begin(write=True) as in_txn:
             label = 31
         elif "zay" in img_path:
             label = 32
-
+        print (label)
         datum = make_datum(img, label)
         in_txn.put('{:0>5d}'.format(in_idx).encode(), datum.SerializeToString())
         print ('{:0>5d}'.format(in_idx) + ':' + img_path)
@@ -213,6 +213,7 @@ with in_db.begin(write=True) as in_txn:
             label = 31
         elif "zay" in img_path:
             label = 32
+        print (label)
         datum = make_datum(img, label)
         in_txn.put('{:0>5d}'.format(in_idx).encode(), datum.SerializeToString())
         print ('{:0>5d}'.format(in_idx) + ':' + img_path)
