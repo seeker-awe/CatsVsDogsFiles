@@ -67,24 +67,12 @@ with in_db.begin(write=True) as in_txn:
             
         img = cv2.imread(img_path, cv2.IMREAD_COLOR)
         img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)
-#         if  "[alef]" in img_path:
-#             label = 0
-#         elif "[baa]" in img_path:
-#             label = 1
-#         elif "[taa]" in img_path:
-#             label = 2
-        if "[thaa]" in img_path:
-            label = 3
+        if  "[thaa]" in img_path:
+            label = 0
         elif "[geem]" in img_path:
-            label = 4
+            label = 1
         elif "[7aa]" in img_path:
-            label = 5
-        elif "[khaa]" in img_path:
-            label = 6
-        elif "[daal]" in img_path:
-            label = 7
-        elif "[thaal]" in img_path:
-            label = 8
+            label = 2
         print (label)
         datum = make_datum(img, label)
         in_txn.put('{:0>5d}'.format(in_idx).encode(), datum.SerializeToString())
@@ -100,24 +88,12 @@ with in_db.begin(write=True) as in_txn:
             continue
         img = cv2.imread(img_path, cv2.IMREAD_COLOR)
         img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)
-#         if  "[alef]" in img_path:
-#             label = 0
-#         elif "[baa]" in img_path:
-#             label = 1
-#         elif "[taa]" in img_path:
-#             label = 2
-        if "[thaa]" in img_path:
-            label = 3
+        if  "[thaa]" in img_path:
+            label = 0
         elif "[geem]" in img_path:
-            label = 4
+            label = 1
         elif "[7aa]" in img_path:
-            label = 5
-        elif "[khaa]" in img_path:
-            label = 6
-        elif "[daal]" in img_path:
-            label = 7
-        elif "[thaal]" in img_path:
-            label = 8
+            label = 2
         print (label)
         datum = make_datum(img, label)
         in_txn.put('{:0>5d}'.format(in_idx).encode(), datum.SerializeToString())
