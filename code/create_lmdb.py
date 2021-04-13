@@ -84,7 +84,9 @@ with in_db.begin(write=True) as in_txn:
         elif "[zay]" in img_path:
             label = 7
         elif "[seen]" in img_path:
-            label = 8      
+            label = 8 
+        elif "[sheen]" in img_path:
+            label = 9
         print (label)
         datum = make_datum(img, label)
         in_txn.put('{:0>5d}'.format(in_idx).encode(), datum.SerializeToString())
@@ -118,6 +120,8 @@ with in_db.begin(write=True) as in_txn:
             label = 7
         elif "[seen]" in img_path:
             label = 8
+        elif "[sheen]" in img_path:
+            label = 9
         print (label)
         datum = make_datum(img, label)
         in_txn.put('{:0>5d}'.format(in_idx).encode(), datum.SerializeToString())
