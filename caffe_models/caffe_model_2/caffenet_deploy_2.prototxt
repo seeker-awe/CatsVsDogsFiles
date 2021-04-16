@@ -202,7 +202,7 @@ layer {
   bottom: "fc7"
   top: "fc8-cats-dogs"
   inner_product_param {
-    num_output: 12
+    num_output: 15
   }
 }
 layer {
