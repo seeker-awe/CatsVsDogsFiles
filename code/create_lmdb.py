@@ -93,7 +93,7 @@ with in_db.begin(write=True) as in_txn:
             label = 11
         elif "['taa]" in img_path:
             label = 12
-        elif "['thaa] img_path:
+        elif "['thaa]" img_path:
             label = 13
         elif "[ain]" in img_path:
             label = 14
@@ -138,7 +138,7 @@ with in_db.begin(write=True) as in_txn:
             label = 11
         elif "['taa]" in img_path:
             label = 12
-        elif "['thaa] img_path:
+        elif "['thaa]" img_path:
             label = 13
         elif "[ain]" in img_path:
             label = 14
