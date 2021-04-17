@@ -97,6 +97,12 @@ with in_db.begin(write=True) as in_txn:
             label = 13
         elif "[ain]" in img_path:
             label = 14
+        elif "[ghain]" in img_path:
+            label = 15
+        elif "[faa]" in img_path:
+            label = 16
+        elif "[qaaf]" in img_path:
+            label = 17
         print (label)
         datum = make_datum(img, label)
         in_txn.put('{:0>5d}'.format(in_idx).encode(), datum.SerializeToString())
@@ -142,6 +148,12 @@ with in_db.begin(write=True) as in_txn:
             label = 13
         elif "[ain]" in img_path:
             label = 14
+        elif "[ghain]" in img_path:
+            label = 15
+        elif "[faa]" in img_path:
+            label = 16
+        elif "[qaaf]" in img_path:
+            label = 17
         print (label)
         datum = make_datum(img, label)
         in_txn.put('{:0>5d}'.format(in_idx).encode(), datum.SerializeToString())
