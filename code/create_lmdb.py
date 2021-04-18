@@ -67,44 +67,50 @@ with in_db.begin(write=True) as in_txn:
             
         img = cv2.imread(img_path, cv2.IMREAD_COLOR)
         img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)
-        if  "[thaa]" in img_path:
+        if  "[alif]" in img_path:
             label = 0
-        elif "[geem]" in img_path:
+        elif "[baa]" in img_path:
             label = 1
-        elif "[7aa]" in img_path:
+        elif "[taa]" in img_path:
             label = 2
-        elif "[khaa]" in img_path:
+        elif "[thaa]" in img_path:
             label = 3
-        elif "[daal]" in img_path:
+        elif "[geem]" in img_path:
             label = 4
-        elif "[thaal]" in img_path:
+        elif "[7aa]" in img_path:
             label = 5
-        elif "[raa]" in img_path:
+        elif "[khaa]" in img_path:
             label = 6
-        elif "[zay]" in img_path:
+        elif "[daal]" in img_path:
             label = 7
-        elif "[seen]" in img_path:
-            label = 8 
-        elif "[sheen]" in img_path:
+        elif "[thaal]" in img_path:
+            label = 8
+        elif "[raa]" in img_path:
             label = 9
-        elif "[saad]" in img_path:
+        elif "[zay]" in img_path:
             label = 10
-        elif "[daad]" in img_path:
+        elif "[seen]" in img_path:
             label = 11
-        elif "['taa]" in img_path:
+        elif "[sheen]" in img_path:
             label = 12
-        elif "['thaa]" in img_path:
+        elif "[saad]" in img_path:
             label = 13
-        elif "[ain]" in img_path:
+        elif "[daad]" in img_path:
             label = 14
-        elif "[ghain]" in img_path:
+        elif "['taa]" in img_path:
             label = 15
-        elif "[faa]" in img_path:
+        elif "['thaa]" in img_path:
             label = 16
-        elif "[qaaf]" in img_path:
+        elif "[ain]" in img_path:
             label = 17
-        elif "[space]" in img_path:
+        elif "[ghain]" in img_path:
             label = 18
+        elif "[faa]" in img_path:
+            label = 19
+        elif "[qaaf]" in img_path:
+            label = 20
+        elif "[space]" in img_path:
+            label = 21
         print (label)
         datum = make_datum(img, label)
         in_txn.put('{:0>5d}'.format(in_idx).encode(), datum.SerializeToString())
@@ -120,44 +126,50 @@ with in_db.begin(write=True) as in_txn:
             continue
         img = cv2.imread(img_path, cv2.IMREAD_COLOR)
         img = transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT)
-        if  "[thaa]" in img_path:
+        if  "[alif]" in img_path:
             label = 0
-        elif "[geem]" in img_path:
+        elif "[baa]" in img_path:
             label = 1
-        elif "[7aa]" in img_path:
+        elif "[taa]" in img_path:
             label = 2
-        elif "[khaa]" in img_path:
+        elif "[thaa]" in img_path:
             label = 3
-        elif "[daal]" in img_path:
+        elif "[geem]" in img_path:
             label = 4
-        elif "[thaal]" in img_path:
+        elif "[7aa]" in img_path:
             label = 5
-        elif "[raa]" in img_path:
+        elif "[khaa]" in img_path:
             label = 6
-        elif "[zay]" in img_path:
+        elif "[daal]" in img_path:
             label = 7
-        elif "[seen]" in img_path:
+        elif "[thaal]" in img_path:
             label = 8
-        elif "[sheen]" in img_path:
+        elif "[raa]" in img_path:
             label = 9
-        elif "[saad]" in img_path:
+        elif "[zay]" in img_path:
             label = 10
-        elif "[daad]" in img_path:
+        elif "[seen]" in img_path:
             label = 11
-        elif "['taa]" in img_path:
+        elif "[sheen]" in img_path:
             label = 12
-        elif "['thaa]" in img_path:
+        elif "[saad]" in img_path:
             label = 13
-        elif "[ain]" in img_path:
+        elif "[daad]" in img_path:
             label = 14
-        elif "[ghain]" in img_path:
+        elif "['taa]" in img_path:
             label = 15
-        elif "[faa]" in img_path:
+        elif "['thaa]" in img_path:
             label = 16
-        elif "[qaaf]" in img_path:
+        elif "[ain]" in img_path:
             label = 17
-        elif "[space]" in img_path:
+        elif "[ghain]" in img_path:
             label = 18
+        elif "[faa]" in img_path:
+            label = 19
+        elif "[qaaf]" in img_path:
+            label = 20
+        elif "[space]" in img_path:
+            label = 21
         print (label)
         datum = make_datum(img, label)
         in_txn.put('{:0>5d}'.format(in_idx).encode(), datum.SerializeToString())
