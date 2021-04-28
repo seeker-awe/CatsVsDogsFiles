@@ -26,9 +26,9 @@ IMAGE_HEIGHT = 227
 def transform_img(img, img_width=IMAGE_WIDTH, img_height=IMAGE_HEIGHT):
 
     #Histogram Equalization
-    img[:, :, 0] = cv2.equalizeHist(img[:, :, 0])
-    img[:, :, 1] = cv2.equalizeHist(img[:, :, 1])
-    img[:, :, 2] = cv2.equalizeHist(img[:, :, 2])
+#     img[:, :, 0] = cv2.equalizeHist(img[:, :, 0])
+#     img[:, :, 1] = cv2.equalizeHist(img[:, :, 1])
+#     img[:, :, 2] = cv2.equalizeHist(img[:, :, 2])
 
     #Image Resizing
     img = cv2.resize(img, (img_width, img_height), interpolation = cv2.INTER_CUBIC)
