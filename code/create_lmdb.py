@@ -109,7 +109,7 @@ with in_db.begin(write=True) as in_txn:
             label = 19
         elif "[qaaf]" in img_path:
             label = 20
-        elif "[space]" in img_path:
+        elif "[noon]" in img_path:
             label = 21
         elif "[kaaf]" in img_path:
             label = 22
@@ -174,7 +174,7 @@ with in_db.begin(write=True) as in_txn:
             label = 19
         elif "[qaaf]" in img_path:
             label = 20
-        elif "[space]" in img_path:
+        elif "[noon]" in img_path:
             label = 21
         elif "[kaaf]" in img_path:
             label = 22
